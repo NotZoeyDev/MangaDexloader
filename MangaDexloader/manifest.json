@@ -1,0 +1,22 @@
+{
+    "name": "MangaDexloader",
+    "version": "1.0",
+    "description": "Download mangas from MangaDex",
+    "manifest_version": 2,
+    "permissions": [
+        "activeTab",
+        "downloads",
+        "storage"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["*://mangadex.org/chapter/*"],
+            "js": ["mangadex.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "background": {
+        "scripts": ["background.js"],
+        "persitent": false
+    }
+  }
